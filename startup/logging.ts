@@ -12,7 +12,7 @@ const Logger = winston.createLogger({
   transports: [
     new winston.transports.Console(),
     // new winston.transports.File({
-    //   filename: "./logs/info.log",
+    //   filename: "./logs/infdo.log",
     // }),
   ],
 });
