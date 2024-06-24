@@ -11,9 +11,9 @@ const Logger = winston.createLogger({
   format: combine(timestamp({ format: "ddd MMM DD YYYY HH:mm:ss" }), customFormat),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({
-      filename: "./logs/info.log",
-    }),
+    // new winston.transports.File({
+    //   filename: "./logs/info.log",
+    // }),
   ],
 });
 
