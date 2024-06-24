@@ -1,0 +1,190 @@
+Mon Jun 10 2024 15:11:35 info: Listening on port 3000... 
+Mon Jun 10 2024 15:11:35 info: Connected to PostgreSQL database 
+Mon Jun 10 2024 15:11:42 info: Authentication successful for user: a.adel 
+Mon Jun 10 2024 15:12:14 info: Authentication failed for user: a.a5del 
+Mon Jun 10 2024 15:15:08 info: Authentication failed for user: undefined 
+Mon Jun 10 2024 16:24:33 info: Listening on port 3000... 
+Mon Jun 10 2024 16:24:33 info: Connected to PostgreSQL database 
+Mon Jun 10 2024 16:24:36 info: Authentication failed for user: undefined 
+Mon Jun 10 2024 16:24:50 info: Authentication successful for user: a.adel 
+Mon Jun 10 2024 16:28:12 info: Listening on port 3000... 
+Mon Jun 10 2024 16:28:12 info: Connected to PostgreSQL database 
+Mon Jun 10 2024 16:28:15 info: Authentication successful for user: a.adel 
+Mon Jun 10 2024 16:31:35 info: Listening on port 3000... 
+Mon Jun 10 2024 16:31:36 info: Connected to PostgreSQL database 
+Mon Jun 10 2024 16:31:40 info: Authentication successful for user: a.adel 
+Fri Jun 21 2024 11:07:00 error: Uncaught Exception: listen EADDRINUSE: address already in use :::3000 
+Fri Jun 21 2024 11:07:01 info: Connected to PostgreSQL database 
+Fri Jun 21 2024 11:08:03 error: Uncaught Exception: listen EADDRINUSE: address already in use :::3000 
+Fri Jun 21 2024 11:08:04 info: Connected to PostgreSQL database 
+Fri Jun 21 2024 11:09:59 info: Listening on port 8000... 
+Fri Jun 21 2024 11:09:59 info: Connected to PostgreSQL database 
+Fri Jun 21 2024 11:10:03 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 11:53:44 info: Listening on port 8000... 
+Sun Jun 23 2024 11:53:44 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 11:54:10 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:05:33 info: Listening on port 8000... 
+Sun Jun 23 2024 12:05:33 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:06:04 info: Listening on port 8000... 
+Sun Jun 23 2024 12:06:04 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:06:17 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:06:57 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:07:10 info: Listening on port 8000... 
+Sun Jun 23 2024 12:07:10 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:11:27 info: Listening on port 8000... 
+Sun Jun 23 2024 12:11:27 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:11:30 info: Authentication failed for user: a.adel 
+Sun Jun 23 2024 12:11:40 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:21:57 error: Uncaught Exception: ⨯ Unable to compile TypeScript:
+[96mutils/jwt.ts[0m:[93m3[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'IJwtToken'.
+
+[7m3[0m export const decodeToken = (token: string): IJwtToken | null => {
+[7m [0m [91m                                            ~~~~~~~~~[0m
+[96mutils/jwt.ts[0m:[93m6[0m:[93m35[0m - [91merror[0m[90m TS2304: [0mCannot find name 'IJwtToken'.
+
+[7m6[0m       return jwt.decode(token) as IJwtToken;
+[7m [0m [91m                                  ~~~~~~~~~[0m
+ 
+Sun Jun 23 2024 12:21:57 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:22:41 info: Listening on port 8000... 
+Sun Jun 23 2024 12:22:41 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:23:13 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:23:21 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:23:52 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:23:59 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:24:56 info: Listening on port 8000... 
+Sun Jun 23 2024 12:24:56 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 12:25:10 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 12:25:28 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 13:02:32 info: Listening on port 8000... 
+Sun Jun 23 2024 13:02:32 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 13:02:42 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 13:52:03 info: Listening on port 8000... 
+Sun Jun 23 2024 13:52:03 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 13:52:09 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 13:53:18 info: Listening on port 8000... 
+Sun Jun 23 2024 13:53:18 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 13:54:37 info: Listening on port 8000... 
+Sun Jun 23 2024 13:54:37 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 13:54:57 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 14:01:31 info: Listening on port 8000... 
+Sun Jun 23 2024 14:01:31 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 14:02:17 info: Listening on port 8000... 
+Sun Jun 23 2024 14:02:17 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 14:03:34 info: Listening on port 8000... 
+Sun Jun 23 2024 14:03:34 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 15:22:38 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 15:33:12 info: Listening on port 8000... 
+Sun Jun 23 2024 15:33:12 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 16:43:23 info: Listening on port 8000... 
+Sun Jun 23 2024 16:43:23 info: Connected to PostgreSQL database 
+Sun Jun 23 2024 16:43:32 info: Authentication successful for user: a.adel 
+Sun Jun 23 2024 17:24:52 info: Listening on port 8000... 
+Sun Jun 23 2024 17:24:53 info: Connected to PostgreSQL database 
+Mon Jun 24 2024 10:59:34 info: Listening on port 8000... 
+Mon Jun 24 2024 10:59:34 error: Error connecting to PostgreSQL database: connection is insecure (try using `sslmode=require`) error: connection is insecure (try using `sslmode=require`)
+    at Parser.parseErrorMessage (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg-protocol\src\parser.ts:369:69)
+    at Parser.handlePacket (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg-protocol\src\parser.ts:188:21)
+    at Parser.parse (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg-protocol\src\parser.ts:103:30)
+    at Socket.<anonymous> (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg-protocol\src\index.ts:7:48)
+    at Socket.emit (node:events:511:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:332:12)
+    at readableAddChunk (node:internal/streams/readable:305:9)
+    at Socket.Readable.push (node:internal/streams/readable:242:10)
+    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)
+Mon Jun 24 2024 11:01:16 info: Listening on port 8000... 
+Mon Jun 24 2024 11:01:17 info: Connected to PostgreSQL database 
+Mon Jun 24 2024 11:08:58 error: Uncaught Exception: Connection terminated unexpectedly 
+Mon Jun 24 2024 11:13:27 error: Error executing query: Client has encountered a connection error and is not queryable Error: Client has encountered a connection error and is not queryable
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+Mon Jun 24 2024 11:13:49 info: Listening on port 8000... 
+Mon Jun 24 2024 11:13:49 info: Connected to PostgreSQL database 
+Mon Jun 24 2024 11:13:52 info: Authentication successful for user: a.adel 
+Mon Jun 24 2024 11:16:52 info: Listening on port 8000... 
+Mon Jun 24 2024 11:16:53 info: Connected to PostgreSQL database 
+Mon Jun 24 2024 11:24:33 error: Uncaught Exception: Connection terminated unexpectedly 
+Mon Jun 24 2024 11:24:55 error: Error executing query: Client has already been connected. You cannot reuse a client. Error: Client has already been connected. You cannot reuse a client.
+    at Client._connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:94:19)
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:167:12
+    at new Promise (<anonymous>)
+    at Client.connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:166:12)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:28:18
+    at Generator.next (<anonymous>)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:4:12)
+    at executeQuery (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:42:12)
+Mon Jun 24 2024 11:25:00 error: Error executing query: Client has already been connected. You cannot reuse a client. Error: Client has already been connected. You cannot reuse a client.
+    at Client._connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:94:19)
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:167:12
+    at new Promise (<anonymous>)
+    at Client.connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:166:12)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:28:18
+    at Generator.next (<anonymous>)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:4:12)
+    at executeQuery (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:42:12)
+Mon Jun 24 2024 11:25:02 error: Error executing query: Client has already been connected. You cannot reuse a client. Error: Client has already been connected. You cannot reuse a client.
+    at Client._connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:94:19)
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:167:12
+    at new Promise (<anonymous>)
+    at Client.connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:166:12)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:28:18
+    at Generator.next (<anonymous>)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:4:12)
+    at executeQuery (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:42:12)
+Mon Jun 24 2024 11:25:16 error: Error executing query: Client has already been connected. You cannot reuse a client. Error: Client has already been connected. You cannot reuse a client.
+    at Client._connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:94:19)
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:167:12
+    at new Promise (<anonymous>)
+    at Client.connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:166:12)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:28:18
+    at Generator.next (<anonymous>)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:4:12)
+    at executeQuery (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:42:12)
+Mon Jun 24 2024 11:31:04 info: Listening on port 8000... 
+Mon Jun 24 2024 11:31:05 info: Connected to PostgreSQL database 
+Mon Jun 24 2024 11:31:09 info: Authentication successful for user: a.adel 
+Mon Jun 24 2024 11:41:52 error: Uncaught Exception: Connection terminated unexpectedly 
+Mon Jun 24 2024 11:42:05 error: Error executing query: 
+Mon Jun 24 2024 11:42:18 error: Error executing query: 
+Mon Jun 24 2024 11:43:13 info: Listening on port 8000... 
+Mon Jun 24 2024 11:43:14 info: Connected to PostgreSQL database 
+Mon Jun 24 2024 11:49:22 error: Uncaught Exception: Connection terminated unexpectedly 
+Mon Jun 24 2024 11:49:53 error: Error executing query: 
+Mon Jun 24 2024 11:49:53 info: Connection lost, attempting to reconnect... 
+Mon Jun 24 2024 11:49:53 info: Attempting to reconnect to PostgreSQL database 
+Mon Jun 24 2024 11:49:53 error: Error connecting to PostgreSQL database: Client has already been connected. You cannot reuse a client. Error: Client has already been connected. You cannot reuse a client.
+    at Client._connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:94:19)
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:167:12
+    at new Promise (<anonymous>)
+    at Client.connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:166:12)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:19:18
+    at Generator.next (<anonymous>)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:4:12)
+    at connect (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:30:12)
+Mon Jun 24 2024 11:49:53 error: Error executing query after reconnecting: 
+Mon Jun 24 2024 11:54:54 error: Error executing query: 
+Mon Jun 24 2024 11:54:54 info: Connection lost, attempting to reconnect... 
+Mon Jun 24 2024 11:54:54 info: Attempting to reconnect to PostgreSQL database 
+Mon Jun 24 2024 11:54:54 error: Error connecting to PostgreSQL database: Client has already been connected. You cannot reuse a client. Error: Client has already been connected. You cannot reuse a client.
+    at Client._connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:94:19)
+    at C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:167:12
+    at new Promise (<anonymous>)
+    at Client.connect (C:\Users\Heba\Desktop\Private\charityNODE\node_modules\pg\lib\client.js:166:12)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:19:18
+    at Generator.next (<anonymous>)
+    at C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:4:12)
+    at connect (C:\Users\Heba\Desktop\Private\charityNODE\startup\db.ts:30:12)
+Mon Jun 24 2024 11:54:54 error: Error executing query after reconnecting: 
