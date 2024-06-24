@@ -1,16 +1,25 @@
 import express from "express";
-import Logger from "./startup/logging";
 const app = express();
 
-process.on("uncaughtException", (err) => {
-  Logger.error(`Uncaught Exception: ${err.message}`);
-});
+app.get("/ee", (req, res) => res.send("Express on Vercel"));
 
-require("./startup/config")();
-require("./startup/db").connect();
-require("./startup/routes")(app);
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
-const port = 3000;
-const server = app.listen(port, () => Logger.info(`Listening on port ${port}...`));
+module.exports = app;
 
-module.exports = server;
+// import express from "express";
+// import Logger from "./startup/logging";
+// const app = express();
+
+// process.on("uncaughtException", (err) => {
+//   Logger.error(`Uncaught Exception: ${err.message}`);
+// });
+
+// require("./startup/config")();
+// require("./startup/db").connect();
+// require("./startup/routes")(app);
+
+// const port = 3000;
+// const server = app.listen(port, () => Logger.info(`Listening on port ${port}...`));
+
+// module.exports = server;
