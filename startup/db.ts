@@ -9,9 +9,9 @@ const client = new Client({
   user: config.get("dbuser"),
   password: config.get("dbpass"),
   port: config.get("dbport"),
-  ssl: {
-    rejectUnauthorized: false, // This will ignore self-signed certificates. For production, ensure you use a proper certificate.
-  },
+  // ssl: {
+  //   rejectUnauthorized: false, // This will ignore self-signed certificates. For production, ensure you use a proper certificate.
+  // },
 });
 
 async function connect() {
