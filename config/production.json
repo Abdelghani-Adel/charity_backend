@@ -1,5 +1,5 @@
 {
-  "jwtPrivateKey": "8werKVBCpy1IbzUo1DcYb8pFRBIrIekT",
+  "jwtPrivateKey": "8werKVBCpy1IbzUo1DcYb8pFRBIrIekcT",
   "dbhost": "ep-old-bread-a2lm4bqw-pooler.eu-central-1.aws.neon.tech",
   "dbname": "charities",
   "dbuser": "default",
