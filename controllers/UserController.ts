@@ -32,7 +32,7 @@ export async function userLoginHandler(req: Request, res: Response) {
 }
 
 function generateToken(user: IQR_UserLogin) {
-  const KEY: string = config.get("jwtPrivateKey");
+  const KEY: string = "8werKVBCpy1IbzUo1DcYb8pFRBIrIekT";
 
   return jwt.sign(
     {

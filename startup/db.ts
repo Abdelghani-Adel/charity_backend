@@ -4,12 +4,20 @@ import config from "config";
 import Logger from "./logging";
 import { setInterval } from "timers";
 
+// const client = new Client({
+//   host: config.get("dbhost"),
+//   database: config.get("dbname"),
+//   user: config.get("dbuser"),
+//   password: config.get("dbpass"),
+//   port: config.get("dbport"),
+// });
+
 const client = new Client({
-  host: config.get("dbhost"),
-  database: config.get("dbname"),
-  user: config.get("dbuser"),
-  password: config.get("dbpass"),
-  port: config.get("dbport"),
+  host: "ep-old-bread-a2lm4bqw-pooler.eu-central-1.aws.neon.tech",
+  database: "charities",
+  user: "default",
+  password: "rg8GaYK7wsbf",
+  port: 5432,
   ssl: {
     rejectUnauthorized: false, // This will ignore self-signed certificates. For production, ensure you use a proper certificate.
   },

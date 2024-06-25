@@ -25,7 +25,7 @@ export function validateToken(req: Request, res: Response, next: NextFunction) {
   const bearerToken = token.split(" ")[1];
 
   try {
-    jwt.verify(bearerToken, config.get("jwtPrivateKey"));
+    jwt.verify(bearerToken, "8werKVBCpy1IbzUo1DcYb8pFRBIrIekT");
     next();
   } catch (ex) {
     res.status(400).send("Invalid token.");
