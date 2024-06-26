@@ -8,27 +8,29 @@ import IQR_UserLogin from "../types/query_results/IQR_UserLogin";
 import config from "config";
 
 export async function userLoginHandler(req: Request, res: Response) {
-  let response: IApiRes_Global<IApiRes_UserLogin> = {
-    success: false,
-  };
+  return res.status(200).send("response");
 
-  // Getting the user from the database.
-  const user: IQR_UserLogin | null = await getUserLogin(req.body.username, req.body.password);
+  // let response: IApiRes_Global<IApiRes_UserLogin> = {
+  //   success: false,
+  // };
 
-  // If the user is not found, return an error message.
-  if (!user) {
-    Logger.info("Authentication failed for user: " + req.body.username);
-    response.message = "Invalid username or password";
-    return res.status(400).send(response);
-  }
+  // // Getting the user from the database.
+  // const user: IQR_UserLogin | null = await getUserLogin(req.body.username, req.body.password);
 
-  // If the user is found, generate a token and return it to the user.
-  Logger.info("Authentication successful for user: " + req.body.username);
-  response.success = true;
-  response.data = {
-    token: generateToken(user),
-  };
-  return res.status(200).send(response);
+  // // If the user is not found, return an error message.
+  // if (!user) {
+  //   Logger.info("Authentication failed for user: " + req.body.username);
+  //   response.message = "Invalid username or password";
+  //   return res.status(400).send(response);
+  // }
+
+  // // If the user is found, generate a token and return it to the user.
+  // Logger.info("Authentication successful for user: " + req.body.username);
+  // response.success = true;
+  // response.data = {
+  //   token: generateToken(user),
+  // };
+  // return res.status(200).send(response);
 }
 
 function generateToken(user: IQR_UserLogin) {
