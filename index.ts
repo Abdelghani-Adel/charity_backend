@@ -8,7 +8,7 @@ const app = express();
 
 // require("./startup/config")();
 // require("./startup/db").connect();
-// require("./startup/routes")(app);
+require("./startup/routes")(app);
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
