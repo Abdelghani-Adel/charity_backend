@@ -8,11 +8,11 @@ import IQR_UserLogin from "../types/query_results/IQR_UserLogin";
 import config from "config";
 
 export async function userLoginHandler(req: Request, res: Response) {
-  return res.status(200).send("response");
+  let response: IApiRes_Global<IApiRes_UserLogin> = {
+    success: false,
+  };
 
-  // let response: IApiRes_Global<IApiRes_UserLogin> = {
-  //   success: false,
-  // };
+  return res.status(200).send(response);
 
   // // Getting the user from the database.
   // const user: IQR_UserLogin | null = await getUserLogin(req.body.username, req.body.password);
