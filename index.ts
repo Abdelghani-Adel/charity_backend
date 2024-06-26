@@ -2,9 +2,9 @@ import express from "express";
 import Logger from "./startup/logging";
 const app = express();
 
-// process.on("uncaughtException", (err) => {
-//   Logger.error(`Uncaught Exception: ${err.message}`);
-// });
+process.on("uncaughtException", (err) => {
+  Logger.error(`Uncaught Exception: ${err.message}`);
+});
 
 // require("./startup/config")();
 // require("./startup/db").connect();
