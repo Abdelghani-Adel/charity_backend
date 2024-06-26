@@ -8,9 +8,8 @@ const app = express();
 
 // require("./startup/config")();
 // require("./startup/db").connect();
-require("./startup/routes")(app);
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+require("./startup/routes")(app);
 
 const port = process.env.PORT || 3030;
 app.listen(port, () => Logger.info(`Listening on port ${port}...`));

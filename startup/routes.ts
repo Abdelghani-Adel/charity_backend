@@ -6,6 +6,7 @@ import indigent from "../routes/indigent";
 import { validateToken } from "../middleware/auth";
 
 module.exports = function (app: Express) {
+  app.get("/", (req, res) => res.send("Express on Vercel"));
   app.use(express.json());
   app.use(cors());
   app.use("/api/auth", auth);
