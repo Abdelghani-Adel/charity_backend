@@ -7,6 +7,8 @@ import IApiRes_UserLogin from "../types/api_responses/IApiRes_UserLogin";
 import IQR_UserLogin from "../types/query_results/IQR_UserLogin";
 import config from "config";
 
+const TOKEN_EXPIRATION = "1h"; // Define a constant for the token expiration duration
+
 export async function userLoginHandler(req: Request, res: Response) {
   let response: IApiRes_Global<IApiRes_UserLogin> = {
     success: false,
@@ -24,9 +26,11 @@ export async function userLoginHandler(req: Request, res: Response) {
 
   // If the user is found, generate a token and return it to the user.
   Logger.info("Authentication successful for user: " + req.body.username);
+  const tokenDetails = generateToken(user);
   response.success = true;
   response.data = {
-    token: generateToken(user),
+    token: tokenDetails.token,
+    tokenExpiration: tokenDetails.expirationTime,
   };
   return res.status(200).send(response);
 }
@@ -34,7 +38,7 @@ export async function userLoginHandler(req: Request, res: Response) {
 function generateToken(user: IQR_UserLogin) {
   const KEY: string = "8werKVBCpy1IbzUo1DcYb8pFRBIrIekT";
 
-  return jwt.sign(
+  const token = jwt.sign(
     {
       id: user.id,
       name: user.name,
@@ -44,7 +48,31 @@ function generateToken(user: IQR_UserLogin) {
     },
     KEY,
     {
-      expiresIn: "1h",
+      expiresIn: TOKEN_EXPIRATION,
     }
   );
+
+  // Calculate expiration time in ISO format
+  const expirationDuration = getMillisecondsFromExpiration(TOKEN_EXPIRATION);
+  const expirationTime = new Date(Date.now() + expirationDuration).toISOString();
+
+  return { token, expirationTime };
+}
+
+function getMillisecondsFromExpiration(expiration: string): number {
+  const timeUnit = expiration.slice(-1);
+  const timeValue = parseInt(expiration.slice(0, -1), 10);
+
+  switch (timeUnit) {
+    case "s": // seconds
+      return timeValue * 1000;
+    case "m": // minutes
+      return timeValue * 60 * 1000;
+    case "h": // hours
+      return timeValue * 60 * 60 * 1000;
+    case "d": // days
+      return timeValue * 24 * 60 * 60 * 1000;
+    default:
+      throw new Error("Invalid expiration format");
+  }
 }
