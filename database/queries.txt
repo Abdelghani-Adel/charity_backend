@@ -1,2 +1,9 @@
 SELECT * FROM login_user('a.adel', 'New.pass.vue');
-SELECT * FROM role;
+SELECT * FROM get_indigents_with_details();
+SELECT * FROM delete_organization(org_id integer);
+SELECT * FROM get_organization_info(org_id);
+SELECT * FROM insert_organization(name, email, phone, lic_num, address);
+SELECT * FROM insert_user(name, username, password, org_id);
+SELECT * FROM update_organization(id, name, email, phone, lic_num, address);
+SELECT * FROM get_indigent_aids(indigent_id, org_id);
+SELECT insert_aid(org_id, ind_id, aid_type_id, desc, isPublic);

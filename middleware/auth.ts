@@ -40,6 +40,13 @@ export function authorize(requiredRole: IUserRole) {
 
       if (!decodedToken) return res.status(401).send("Access denied. No token provided.");
 
+      // Attach token payloads to the request object
+      req.body.user = {
+        id: decodedToken.id,
+        roles: decodedToken.roles,
+        org_id: decodedToken.organization_id,
+      };
+
       const userRole = decodedToken.roles;
 
       if (!userRole || !hasRole(userRole, requiredRole)) {
