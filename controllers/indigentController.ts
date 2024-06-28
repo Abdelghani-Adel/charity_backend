@@ -26,10 +26,10 @@ export async function getIndigentDetails(req: Request, res: Response) {
   };
 
   const { id } = req.params;
-  const orgId = req.body.user.orgId;
+  // const orgId = req.body.user.orgId;
 
   // Getting the indigent details from the database.
-  const aids: IQR_GetIndigentAids[] | null = await getIndigentAids(id, orgId);
+  const aids: IQR_GetIndigentAids[] | null = await getIndigentAids(id, "2");
 
   response.success = true;
   response.data = {
