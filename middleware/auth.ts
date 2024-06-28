@@ -44,7 +44,7 @@ export function authorize(requiredRole: IUserRole) {
       req.body.user = {
         id: decodedToken.id,
         roles: decodedToken.roles,
-        org_id: decodedToken.organization_id,
+        orgId: decodedToken.organization_id,
       };
 
       const userRole = decodedToken.roles;
