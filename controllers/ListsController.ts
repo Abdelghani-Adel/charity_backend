@@ -42,3 +42,22 @@ export async function getIndigencyTypes(req: Request, res: Response) {
 
   return res.status(200).send(response);
 }
+
+export async function getAidTypes(req: Request, res: Response) {
+  const query = `SELECT * from aid_type;`;
+  const result: IQR_GetList[] | null = await executeQuery(query);
+
+  let response: IApiRes_Global<IApiRes_GetListOptions[]> = {
+    success: false,
+  };
+
+  if (result) {
+    response.success = true;
+    response.data = result.map((row: any) => ({
+      value: row.id,
+      label: row.name,
+    }));
+  }
+
+  return res.status(200).send(response);
+}
