@@ -1,8 +1,8 @@
 import express from "express";
-import { getIndigencyTypes } from "../controllers/ListsController";
+import { getIndigencyListOption, getIndigencyTypes } from "../controllers/ListsController";
 const router = express.Router();
 
-// getting the indigent list
 router.get("/indigency-type", getIndigencyTypes);
+router.get("/indigent", getIndigencyListOption);
 
 export default router;
