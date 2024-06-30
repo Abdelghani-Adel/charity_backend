@@ -1,9 +1,9 @@
 import express from "express";
-import { getAllIndigent, getIndigentDetails } from "../controllers/indigentController";
+import { insertNewAid } from "../controllers/AidsController";
 const router = express.Router();
 
 // Add new aid.
-router.post("/", getAllIndigent);
+router.post("/", insertNewAid);
 
 // Getting the organization's aids list.
 router.get("/");
