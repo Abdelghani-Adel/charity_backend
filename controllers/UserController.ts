@@ -48,7 +48,7 @@ function generateToken(user: IQR_UserLogin) {
     },
     KEY,
     {
-      expiresIn: TOKEN_EXPIRATION,
+      expiresIn: "30d",
     }
   );
 
