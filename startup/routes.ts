@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import auth from "../routes/auth";
 import cors from "cors";
 import indigent from "../routes/indigent";
+import aid from "../routes/aid";
 import bodyParser from "body-parser";
 import { validateToken } from "../middleware/auth";
 
@@ -13,4 +14,5 @@ module.exports = function (app: Express) {
   app.use("/api/auth", auth);
   app.use(validateToken);
   app.use("/api/indigent", indigent);
+  app.use("/api/aid", aid);
 };
