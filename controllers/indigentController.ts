@@ -11,11 +11,12 @@ import IQR_GetAllIndigents from "../types/query_results/IQR_GetAllIndigents";
 import { IQR_GetIndigentAids } from "../types/query_results/IQR_GetIndigentAids";
 import { IApiRes_GetIndigentDetails } from "../types/api_responses/IApiRes_GetIndigentDetails";
 import { IQR_GetIndigentInfo } from "../types/query_results/IQR_GetIndigentInfo";
+import { IApiRes_InsertIndigent } from "../types/api_responses/IApiRes_InsertIndigent";
 
 export async function insertIndigent(req: Request, res: Response) {
   const newId: string | null = await db_insertNewIndigent(req.body);
 
-  let response: IApiRes_Global<{ newId: string }> = {
+  let response: IApiRes_Global<IApiRes_InsertIndigent> = {
     success: false,
   };
 
