@@ -1,7 +1,27 @@
 import { executeQuery } from "../startup/db";
+import { ApiReq_InsertIndigent } from "../types/api_requests/ApiReq_InsertIndigent";
 import IQR_GetAllIndigents from "../types/query_results/IQR_GetAllIndigents";
 import { IQR_GetIndigentAids } from "../types/query_results/IQR_GetIndigentAids";
 import { IQR_GetIndigentInfo } from "../types/query_results/IQR_GetIndigentInfo";
+
+export async function db_insertNewIndigent(
+  newIndigent: ApiReq_InsertIndigent
+): Promise<string | null> {
+  const {
+    national_id,
+    name,
+    phone,
+    kids,
+    indigency_type_id,
+    governorate_id,
+    city_id,
+    district_id,
+    address,
+  } = newIndigent;
+  const query = `SELECT insert_indigent('${national_id}', '${name}', '${phone}', ${kids}, ${indigency_type_id}, ${governorate_id}, ${city_id}, ${district_id}, '${address}');`;
+  const result: string[] = await executeQuery(query);
+  return result[0];
+}
 
 export async function getIndigentList(): Promise<IQR_GetAllIndigents | null> {
   const query = `SELECT * FROM get_indigents_with_details();`;

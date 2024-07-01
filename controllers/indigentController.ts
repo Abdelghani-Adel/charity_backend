@@ -1,11 +1,29 @@
 import { Request, Response } from "express";
-import { getIndigentAids, getIndigentInfo, getIndigentList } from "../database/IndigentQueries";
+import {
+  db_insertNewIndigent,
+  getIndigentAids,
+  getIndigentInfo,
+  getIndigentList,
+} from "../database/IndigentQueries";
 import IApiRes_GetAllIndigents from "../types/api_responses/IApiRes_GetAllIndigents";
 import IApiRes_Global from "../types/api_responses/IApiRes_Global";
 import IQR_GetAllIndigents from "../types/query_results/IQR_GetAllIndigents";
 import { IQR_GetIndigentAids } from "../types/query_results/IQR_GetIndigentAids";
 import { IApiRes_GetIndigentDetails } from "../types/api_responses/IApiRes_GetIndigentDetails";
 import { IQR_GetIndigentInfo } from "../types/query_results/IQR_GetIndigentInfo";
+
+export async function insertIndigent(req: Request, res: Response) {
+  const newId: string | null = await db_insertNewIndigent(req.body);
+
+  let response: IApiRes_Global<{ newId: string }> = {
+    success: false,
+  };
+
+  response.success = true;
+  response.data = { newId: newId ?? "0" };
+
+  return res.status(200).send(response);
+}
 
 export async function getAllIndigent(req: Request, res: Response) {
   // Getting the indigentList from the database.

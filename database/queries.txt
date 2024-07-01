@@ -9,3 +9,4 @@ SELECT * FROM get_indigent_aids(indigent_id, org_id);
 SELECT insert_organization(name, email, phone, lic_num, address);
 SELECT insert_user(name, username, password, org_id);
 SELECT insert_aid(org_id, ind_id, aid_type_id, desc, isPublic);
+SELECT insert_indigent(nid, name, phone, kids, indigency_type, gov_id, city, district, address)
