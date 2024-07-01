@@ -3,7 +3,7 @@ import auth from "../routes/auth";
 import cors from "cors";
 import indigent from "../routes/indigent";
 import aid from "../routes/aid";
-import lists from "../routes/lists";
+import lists from "../routes/options-list";
 import bodyParser from "body-parser";
 import { validateToken } from "../middleware/auth";
 
@@ -16,5 +16,5 @@ module.exports = function (app: Express) {
   app.use(validateToken);
   app.use("/api/indigent", indigent);
   app.use("/api/aid", aid);
-  app.use("/api/lists", lists);
+  app.use("/api/options-list", lists);
 };
