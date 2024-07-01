@@ -31,12 +31,14 @@ export async function getGovernorateOptions(req: Request, res: Response) {
 }
 
 export async function getCityOptions(req: Request, res: Response) {
-  const query = `SELECT id, name FROM city;`;
+  const { id } = req.params;
+  const query = `SELECT id, name FROM city where governorate_id = ${id};`;
   return getOptionsList(query, res);
 }
 
 export async function getDistrictOptions(req: Request, res: Response) {
-  const query = `SELECT id, name FROM district;`;
+  const { id } = req.params;
+  const query = `SELECT id, name FROM district where city_id = ${id};`;
   return getOptionsList(query, res);
 }
 

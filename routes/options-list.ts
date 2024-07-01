@@ -15,7 +15,7 @@ router.get("/aid-type", getAidTypeOptions);
 router.get("/complaint-type", getComplaintTypeOptions);
 router.get("/indigency-type", getIndigencyTypeOptions);
 router.get("/governorate", getGovernorateOptions);
-router.get("/city", getCityOptions);
-router.get("/district", getDistrictOptions);
+router.get("/city/:id", getCityOptions);
+router.get("/district/:id", getDistrictOptions);
 
 export default router;
