@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import auth from "../routes/auth";
 import cors from "cors";
 import indigent from "../routes/indigent";
+import indigentGroups from "../routes/indigentGroups";
 import aid from "../routes/aid";
 import lists from "../routes/options-list";
 import bodyParser from "body-parser";
@@ -15,6 +16,7 @@ module.exports = function (app: Express) {
   app.use("/api/auth", auth);
   app.use(validateToken);
   app.use("/api/indigent", indigent);
+  app.use("/api/indigentGroups", indigentGroups);
   app.use("/api/aid", aid);
   app.use("/api/options-list", lists);
 };
