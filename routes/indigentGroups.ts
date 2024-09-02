@@ -10,9 +10,9 @@ import {
 
 const router = express.Router();
 
-router.get("/getOrgGroups", getOrgGroups);
+router.post("/getOrgGroups", getOrgGroups);
 
-router.get("/getGroupInfo", getGroupInfo);
+router.post("/getGroupInfo", getGroupInfo);
 
 router.post("/removeFromGroup", removeFromGroup);
 
