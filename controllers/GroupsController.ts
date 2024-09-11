@@ -57,7 +57,7 @@ export async function getGroupInfo(req: Request, res: Response) {
 
   let response: IApiRes_Global<null | IApiRes_GetGroupInfo[]> = {
     success: true,
-    data: result,
+    data: result ? result[0] : null,
   };
   return res.status(200).send(response);
 }
