@@ -1,52 +1,52 @@
+import { IGroupDetailsRecord } from "../interfaces/database/IGroupDetailsRecord";
+import { IGroupListRecord } from "../interfaces/database/IGroupListRecord";
+import { IAddToGroupRequest } from "../interfaces/requests/IAddToGroupRequest";
+import { IEditGroupRequest } from "../interfaces/requests/IEditGroupRequest";
+import { IInsertGroupRequest } from "../interfaces/requests/IInsertGroupRequest";
+import { IRemoveFromGroupRequest } from "../interfaces/requests/IRemoveFromGroupRequest";
 import { executeQuery } from "../startup/db";
-import { ApiReq_AddToGroup } from "../types/api_requests/ApiReq_AddToGroup";
-import { ApiReq_EditGroup } from "../types/api_requests/ApiReq_EditGroup";
-import { ApiReq_RemoveFromGroup } from "../types/api_requests/ApiReq_RemoveFromGroup";
-import { ApiReq_InsertGroup } from "./../types/api_requests/ApiReq_InsertGroup.d";
-import IApiRes_GetGroupInfo from "./../types/api_responses/ApiRes_GetGroupInfo.d";
-import IApiRes_GetOrgGroups from "./../types/api_responses/IApiRes_GetOrgGroups.d";
 
-export async function db_addGroup(org_id: string, newGroup: ApiReq_InsertGroup): Promise<void> {
+export async function dbCreateGroup(org_id: string, newGroup: IInsertGroupRequest): Promise<void> {
   const { group_name, description } = newGroup;
-  const query = `SELECT add_group(${org_id}, '${group_name}', '${description}');`;
+  const query = `SELECT group_create(${org_id}, '${group_name}', '${description}');`;
   await executeQuery(query);
 }
 
-export async function db_editGroup(org_id: string, group: ApiReq_EditGroup): Promise<void> {
+export async function dbEditGroup(org_id: string, group: IEditGroupRequest): Promise<void> {
   const { group_id, group_name, description } = group;
-  const query = `SELECT edit_group(${group_id}, ${org_id}, '${group_name}', '${description}');`;
+  const query = `SELECT group_edit(${group_id}, ${org_id}, '${group_name}', '${description}');`;
   await executeQuery(query);
 }
 
-export async function db_addToGroup(org_id: string, req: ApiReq_AddToGroup): Promise<void> {
+export async function dbAddToGroup(org_id: string, req: IAddToGroupRequest): Promise<void> {
   const { indigents, group_id } = req;
   const ind_array = indigents.join(", ");
-  const query = `SELECT add_indigents_to_group(ARRAY[${ind_array}], ${org_id}, ${group_id});`;
+  const query = `SELECT group_add_indigents(ARRAY[${ind_array}], ${org_id}, ${group_id});`;
   console.log(query);
   await executeQuery(query);
 }
 
-export async function db_removeFromGroup(
+export async function dbRemoveFromGroup(
   org_id: string,
-  req: ApiReq_RemoveFromGroup
+  req: IRemoveFromGroupRequest
 ): Promise<void> {
   const { indigents, group_id } = req;
   const ind_array = indigents.join(", ");
-  const query = `SELECT remove_indigents_from_group(ARRAY[${ind_array}], ${org_id}, ${group_id});`;
+  const query = `SELECT group_remove_indigents(ARRAY[${ind_array}], ${org_id}, ${group_id});`;
   await executeQuery(query);
 }
 
-export async function db_getGroupInfo(
+export async function dbGetGroupDetails(
   org_id: string,
   groupId: string
-): Promise<null | IApiRes_GetGroupInfo> {
-  const query = `SELECT * FROM get_group_details(${groupId}, ${org_id});`;
-  const result: IApiRes_GetGroupInfo = await executeQuery(query);
+): Promise<null | IGroupDetailsRecord[]> {
+  const query = `SELECT * FROM group_details(${org_id}, ${groupId});`;
+  const result: IGroupDetailsRecord[] = await executeQuery(query);
   return result;
 }
 
-export async function db_getOrgGroups(org_id: string): Promise<null | IApiRes_GetOrgGroups> {
-  const query = `SELECT * FROM get_groups_for_organization(${org_id});`;
-  const result: IApiRes_GetOrgGroups = await executeQuery(query);
+export async function dbGetGroupList(org_id: string): Promise<null | IGroupListRecord[]> {
+  const query = `SELECT * FROM group_list(${org_id});`;
+  const result: IGroupListRecord[] = await executeQuery(query);
   return result;
 }

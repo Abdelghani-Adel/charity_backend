@@ -1,51 +1,52 @@
 import { Request, Response } from "express";
 import {
-  db_addGroup,
-  db_addToGroup,
-  db_editGroup,
-  db_getGroupInfo,
-  db_getOrgGroups,
-  db_removeFromGroup,
+  dbCreateGroup,
+  dbAddToGroup,
+  dbEditGroup,
+  dbGetGroupDetails,
+  dbGetGroupList,
+  dbRemoveFromGroup,
 } from "../database/GroupQueries";
-import { ApiReq_InsertGroup } from "../types/api_requests/ApiReq_InsertGroup";
-import IApiRes_Global from "../types/api_responses/IApiRes_Global";
-import { ApiReq_EditGroup } from "../types/api_requests/ApiReq_EditGroup";
-import { ApiReq_AddToGroup } from "../types/api_requests/ApiReq_AddToGroup";
-import { ApiReq_RemoveFromGroup } from "../types/api_requests/ApiReq_RemoveFromGroup";
-import IApiRes_GetOrgGroups from "./../types/api_responses/IApiRes_GetOrgGroups.d";
-import IApiRes_GetGroupInfo from "./../types/api_responses/ApiRes_GetGroupInfo.d";
+import { IGroupDetailsRecord } from "../interfaces/database/IGroupDetailsRecord";
+import { IGroupListRecord } from "../interfaces/database/IGroupListRecord";
+import { IEditGroupRequest } from "../interfaces/requests/IEditGroupRequest";
+import { IInsertGroupRequest } from "../interfaces/requests/IInsertGroupRequest";
+import { IRemoveFromGroupRequest } from "../interfaces/requests/IRemoveFromGroupRequest";
+import IGlobalResponse from "../interfaces/responses/IGlobalResponse";
+import { IAddToGroupRequest } from "../interfaces/requests/IAddToGroupRequest";
 
 export async function insertGroup(req: Request, res: Response) {
-  const reqBody: ApiReq_InsertGroup = req.body;
-  await db_addGroup("2", reqBody);
-  let response: IApiRes_Global<null> = {
+  const reqBody: IInsertGroupRequest = req.body;
+
+  await dbCreateGroup("2", reqBody);
+  let response: IGlobalResponse<null> = {
     success: true,
   };
   return res.status(200).send(response);
 }
 
 export async function editGroup(req: Request, res: Response) {
-  const reqBody: ApiReq_EditGroup = req.body;
-  await db_editGroup("2", reqBody);
-  let response: IApiRes_Global<null> = {
+  const reqBody: IEditGroupRequest = req.body;
+  await dbEditGroup("2", reqBody);
+  let response: IGlobalResponse<null> = {
     success: true,
   };
   return res.status(200).send(response);
 }
 
 export async function addToGroup(req: Request, res: Response) {
-  const reqBody: ApiReq_AddToGroup = req.body;
-  await db_addToGroup("2", reqBody);
-  let response: IApiRes_Global<null> = {
+  const reqBody: IAddToGroupRequest = req.body;
+  await dbAddToGroup("2", reqBody);
+  let response: IGlobalResponse<null> = {
     success: true,
   };
   return res.status(200).send(response);
 }
 
 export async function removeFromGroup(req: Request, res: Response) {
-  const reqBody: ApiReq_RemoveFromGroup = req.body;
-  await db_removeFromGroup("2", reqBody);
-  let response: IApiRes_Global<null> = {
+  const reqBody: IRemoveFromGroupRequest = req.body;
+  await dbRemoveFromGroup("2", reqBody);
+  let response: IGlobalResponse<null> = {
     success: true,
   };
   return res.status(200).send(response);
@@ -53,9 +54,9 @@ export async function removeFromGroup(req: Request, res: Response) {
 
 export async function getGroupInfo(req: Request, res: Response) {
   const reqBody: { groupId: string } = req.body;
-  const result: null | IApiRes_GetGroupInfo[] = await db_getGroupInfo("2", reqBody.groupId);
+  const result: null | IGroupDetailsRecord[] = await dbGetGroupDetails("2", reqBody.groupId);
 
-  let response: IApiRes_Global<null | IApiRes_GetGroupInfo[]> = {
+  let response: IGlobalResponse<null | IGroupDetailsRecord> = {
     success: true,
     data: result ? result[0] : null,
   };
@@ -63,9 +64,9 @@ export async function getGroupInfo(req: Request, res: Response) {
 }
 
 export async function getOrgGroups(req: Request, res: Response) {
-  const result: null | IApiRes_GetOrgGroups[] = await db_getOrgGroups("2");
+  const result: null | IGroupListRecord[] = await dbGetGroupList("2");
 
-  let response: IApiRes_Global<null | IApiRes_GetOrgGroups[]> = {
+  let response: IGlobalResponse<null | IGroupListRecord[]> = {
     success: true,
     data: result,
   };

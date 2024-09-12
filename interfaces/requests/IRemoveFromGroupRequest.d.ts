@@ -1,4 +1,4 @@
-export interface ApiReq_AddToGroup {
+export interface IRemoveFromGroupRequest {
   indigents: string[];
   group_id: string;
 }

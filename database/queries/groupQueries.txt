@@ -1,11 +1,11 @@
-SELECT add_group(org_id, group_name, description);
+SELECT group_create(org_id, group_name, description);
 
-SELECT edit_group(group_id, org_id, group_name, description);
+SELECT group_edit(group_id, org_id, group_name, description);
 
-SELECT add_indigents_to_group(ARRAY[1, 2, 3], org_id, group_id);
+SELECT group_add_indigents(ARRAY[1, 2, 3], org_id, group_id);
 
-SELECT remove_indigents_from_group(ARRAY[1, 2, 3], org_id, grp_id);
+SELECT group_remove_indigents(ARRAY[1, 2, 3], org_id, grp_id);
 
-SELECT * FROM get_group_details(grp_id, org_id);
+SELECT * FROM group_details(org_id, grp_id);
 
-SELECT * FROM get_groups_for_organization(org_id);
+SELECT * FROM group_list(org_id);

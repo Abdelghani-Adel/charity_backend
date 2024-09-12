@@ -1,4 +1,4 @@
-export interface ApiReq_InsertGroup {
+export interface IInsertGroupRequest {
   group_name: string;
   description: string;
 }

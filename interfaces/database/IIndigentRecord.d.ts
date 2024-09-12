@@ -1,5 +1,4 @@
-// Interface for each indigent in the group
-export interface IQR_Indigent {
+type IIndigentRecord = {
   indigent_id: number;
   national_id: string;
   indigent_name: string;
@@ -11,11 +10,6 @@ export interface IQR_Indigent {
   district_name: string;
   address: string | null;
   is_active: boolean;
-}
+}[];
 
-// Interface for the response of the `get_group_details` function
-export interface IQR_GetGroupInfo {
-  group_name: string;
-  group_description: string;
-  indigents: IQR_Indigent[];
-}
+export default IIndigentRecord;
