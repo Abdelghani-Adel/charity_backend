@@ -3,6 +3,7 @@ import {
   getAllIndigent,
   getIndigentDetails,
   insertIndigent,
+  searchIndigent,
 } from "../controllers/indigentController";
 const router = express.Router();
 
@@ -14,5 +15,7 @@ router.post("/", insertIndigent);
 
 // getting the details of single indgent [info, aids]
 router.get("/:id", getIndigentDetails);
+
+router.post("/search", searchIndigent);
 
 export default router;

@@ -3,6 +3,7 @@ import { ApiReq_InsertIndigent } from "../types/api_requests/ApiReq_InsertIndige
 import IQR_GetAllIndigents from "../types/query_results/IQR_GetAllIndigents";
 import { IQR_GetIndigentAids } from "../types/query_results/IQR_GetIndigentAids";
 import { IQR_GetIndigentInfo } from "../types/query_results/IQR_GetIndigentInfo";
+import { IQR_SearchIndigent } from "../types/query_results/IQR_SearchIndigent";
 
 export async function db_insertNewIndigent(
   newIndigent: ApiReq_InsertIndigent
@@ -42,4 +43,10 @@ export async function getIndigentInfo(indigent_id: string): Promise<IQR_GetIndig
   const query = `SELECT * FROM get_indigent_info(${indigent_id});`;
   const result: IQR_GetIndigentInfo[] = await executeQuery(query);
   return result ? result[0] : null;
+}
+
+export async function searchIndignet(name: string): Promise<IQR_SearchIndigent[] | null> {
+  const query = `select id, name from indigent where name like '%${name}%'`;
+  const result: IQR_SearchIndigent[] = await executeQuery(query);
+  return result;
 }
